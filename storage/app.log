@@ -1,0 +1,9 @@
+2023-11-20 20:54:33,558 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 20:56:49,723 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 20:59:12,566 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 21:04:04,738 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 22:00:00,585 - basicLogger - INFO - Trying to connect to Kafka client... (ATTEMPT #1)
+2023-11-20 22:00:00,585 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 22:00:46,562 - basicLogger - INFO - Trying to connect to Kafka client... (ATTEMPT #1)
+2023-11-20 22:00:46,562 - basicLogger - INFO - Connecting to DB. Hostname: kevin-3855.eastus.cloudapp.azure.com, Port: 3306
+2023-11-20 22:00:47,156 - basicLogger - INFO - Successfully connected!
