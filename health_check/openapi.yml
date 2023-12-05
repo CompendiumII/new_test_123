@@ -42,7 +42,7 @@ components:
         audit:
           type: string
           example: Down 
-        last_update:
+        last_updated:
           type: string
           format: date-time
           example: 2023-04-29T07:11:42.021Z
