@@ -134,6 +134,7 @@ services:
       - "processing"
       - "audit_log"
       - "dashboard-ui"
+      - "health_check"
     ports:
       - "80:80"
     networks:
