@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  description: This API provides event stats
+  version: "1.0.0"
+  title: Stats API
+  contact:
+    email: kxu18@my.bcit.ca
+
+paths:
+  /health:
+    get:
+      summary: "Obtains the health status of services."
+      operationId: app.update_health
+      responses:
+        '200':
+          description: "Successfully retrieved statuses."
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthStatus'
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      required:
+        - receiver
+        - storage
+        - processing
+        - audit
+        - last_update
+      properties:
+        receiver:
+          type: string
+          example: Down
+        storage:
+          type: string
+          example: Down
+        processing:
+          type: string
+          example: Running 
+        audit:
+          type: string
+          example: Down 
+        last_update:
+          type: string
+          format: date-time
+          example: 2023-04-29T07:11:42.021Z
+
+#    Error:
+#      type: object
+#      properties:
+#        message:
+#          type: string
+#          description: "Unable to get status of services"

@@ -42,7 +42,7 @@ if not os.path.exists(DATA_PATH):
     logger.info("JSON file created and initialized.")
 
 
-def check_service_health(url):
+def check_health(url):
     try:
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
@@ -51,7 +51,7 @@ def check_service_health(url):
         logger.error(f"Failed to obtain JSON data.")
     return "Down"
 
-def update_health_status():
+def update_health():
 
     logger.info("Retrieving health status of services...")  
 
@@ -64,10 +64,10 @@ def update_health_status():
     
     
     health_status = {
-        'receiver': check_service_health(receiver_url),
-        'storage': check_service_health(storage_url),
-        'processing': check_service_health(processing_url),
-        'audit': check_service_health(audit_url),
+        'receiver': check_health(receiver_url),
+        'storage': check_health(storage_url),
+        'processing': check_health(processing_url),
+        'audit': check_health(audit_url),
         'last_updated': current_update
     }
     
@@ -80,11 +80,11 @@ def update_health_status():
 
 def init_scheduler():
     sched = BackgroundScheduler(daemon=True)
-    sched.add_job(update_health_status, 'interval', seconds=app_config['scheduler']['period_sec'])
+    sched.add_job(update_health, 'interval', seconds=app_config['scheduler']['period_sec'])
     sched.start()
 
 app = connexion.FlaskApp(__name__, specification_dir='')
-app.add_api("openapi.yaml", base_path="/health_check", strict_validation=True, validate_responses=True)
+app.add_api("openapi.yml", base_path="/health_check", strict_validation=True, validate_responses=True)
 
 if __name__ == "__main__":
     if "TARGET_ENV" not in os.environ or os.environ["TARGET_ENV"] != "test":

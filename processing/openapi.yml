@@ -6,7 +6,7 @@ info:
 paths:
   /health:
     get:
-      operationId: audit.get_health
+      operationId: processing.get_health
       description: Performs a check for the service health status
       responses:
         '200':
