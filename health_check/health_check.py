@@ -70,8 +70,8 @@ def update_health():
         'audit': check_health(audit_url),
         'last_updated': current_update
     }
-    
-    with open(app_config['datastore']['filename'], 'w') as file:
+    logger.info(health_status)
+    with open(DATA_PATH, 'w') as file:
         json.dump(health_status, file, indent=2)
 
     logger.info("Successful retrieval of service statuses.")      
