@@ -157,6 +157,7 @@ services:
 volumes:
   my-db:
   processing-db:
+  health_check-db:
 
 networks:
   api.network:
