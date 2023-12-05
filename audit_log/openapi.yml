@@ -4,6 +4,21 @@ info:
   title: DOTA2 Usage Tracker
   description: This API receives usage events from DOTA2.
 paths:
+  /health:
+    get:
+      operationId: audit.get_health
+      description: Performs a check for weather the service is healthy or not
+      responses:
+        '200':
+          description: Returned a successful health check response
+          content:
+            application/json:
+              schemai:
+                type: object
+                properties:
+                  message:
+                    type: string
+    
   /Usage_Count/item-usage:
     get:
       operationId: audit.get_item_stats

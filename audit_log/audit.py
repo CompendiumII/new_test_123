@@ -58,6 +58,9 @@ def get_item_stats(index):
     logger.error("Could not find item statistic at index %d" % index)
     return { "message": "Not found" }, 404
 
+def get_health():
+    return 200
+
 def get_ability_stats(index):
     kafka_server = app_config['events']['hostname']
     kafka_port = app_config['events']['port']

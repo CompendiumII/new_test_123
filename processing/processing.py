@@ -31,6 +31,9 @@ logger = logging.getLogger('basicLogger')
 logger.info("App Conf File: %s" % app_conf_file)
 logger.info("Log Conf File: %s" % log_conf_file)
 
+def get_health():
+    return 200
+
 def populate_stats():
     logger.info("Start Periodic Processing")
 

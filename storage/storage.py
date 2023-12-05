@@ -43,10 +43,8 @@ DB_ENGINE = create_engine(f"mysql+pymysql://{app_config['datastore']['user']}:{a
 Base.metadata.bind = DB_ENGINE
 DB_SESSION = sessionmaker(bind=DB_ENGINE)
 
-
-
-
-
+def get_health():
+    return 200
 
 def get_item_usage(start_timestamp, end_timestamp):
     session = DB_SESSION()

@@ -47,6 +47,25 @@ services:
       - "kafka"
       - "db"
 
+  health_check:
+    image: health_check:latest
+    restart: always
+    ports:
+      - "8120"
+    networks:
+      - "api.network"
+    environment:
+      - TARGET_ENV=test
+    volumes:
+      - /home/azureuser/config/health_check:/config
+      - /home/azureuser/logs:/logs
+      - health_check-db:/health-data
+    depends_on:
+      - "receiver"
+      - "storage"
+      - "processing"
+      - "audit_log"
+
   processing:
     image: processing:latest
     restart: always

@@ -36,6 +36,9 @@ logger.info("Log Conf File: %s" % log_conf_file)
 
 headers = {"Content-Type": 'application/json; charset=utf-8'}
 
+def get_health():
+    return 200
+
 def kafka_connection():
     current_retries = 0
     max_retries = app_config["kafka"]["max_retries"]
