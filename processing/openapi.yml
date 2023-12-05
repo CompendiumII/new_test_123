@@ -11,13 +11,6 @@ paths:
       responses:
         '200':
           description: Returned a successful health check response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
                     
   /Usage_Count/stats:
     get:

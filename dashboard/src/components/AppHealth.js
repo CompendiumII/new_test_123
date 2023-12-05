@@ -35,16 +35,16 @@ export default function HealthAppStats() {
                 <table className={"StatsTable"}>
 					<tbody>
 						<tr>
-                            <td>Receiver: {stats['Receiver']}</td>
+                            <td>Receiver: {stats['receiver']}</td>
                         </tr>
                         <tr>
-							<td>Storage: {stats['Storage']}</td>
+							<td>Storage: {stats['storage']}</td>
 						</tr>
 						<tr>
-							<td>Processing: {stats['Processing']}</td>
+							<td>Processing: {stats['processing']}</td>
 						</tr>
 						<tr>
-                            <td>Audit: {stats['Audit']}</td>
+                            <td>Audit: {stats['audit']}</td>
 						</tr>
 					</tbody>
                 </table>

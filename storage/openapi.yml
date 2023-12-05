@@ -11,14 +11,7 @@ paths:
       responses:
         '200':
           description: Returned a successful health check response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    
+
   /Usage_Count/item-usage:
     get:
       operationId: storage.get_item_usage
