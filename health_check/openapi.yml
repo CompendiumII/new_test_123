@@ -28,7 +28,7 @@ components:
         - storage
         - processing
         - audit
-        - last_update
+        - last_updated
       properties:
         receiver:
           type: string
