@@ -8,7 +8,7 @@ export default function HealthAppStats() {
 
 	const getStats = () => {
 	
-        fetch(`http://kevin-3855.eastus.cloudapp.azure.com/health/health_stats`)
+        fetch(`http://kevin-3855.eastus.cloudapp.azure.com/health_check/health`)
             .then(res => res.json())
             .then((result)=>{
 				console.log("Received Stats")
@@ -35,7 +35,7 @@ export default function HealthAppStats() {
                 <table className={"StatsTable"}>
 					<tbody>
 						<tr>
-							<td>Audit: {stats['Audit']}</td>
+                            <td>Receiver: {stats['Receiver']}</td>
                         </tr>
                         <tr>
 							<td>Storage: {stats['Storage']}</td>
@@ -44,7 +44,7 @@ export default function HealthAppStats() {
 							<td>Processing: {stats['Processing']}</td>
 						</tr>
 						<tr>
-							<td>Receiver: {stats['Receiver']}</td>
+                            <td>Audit: {stats['Audit']}</td>
 						</tr>
 					</tbody>
                 </table>
